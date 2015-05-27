@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+		<title>ToDo App</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="//use.edgefonts.net/vast-shadow:n4:all.js"></script>
+		<script src="//use.edgefonts.net/vast-shadow:n4:all;megrim.js"></script>
+	</head>
+
+<body>
+<!--<div class="ring"><TODO APP</div>-->
+
+			<section id="header">
+				<div class="inner">
+					<span class="icon major fa-cloud"></span>
+					<h1>Welcome to the add tasks page of the TODO APP</h1>
+					<p>Here you can add tasks to your todo list.</p>
+					<ul class="actions">
+						<li><a href="#one" class="button scrolly">ADD</a></li>
+					</ul>
+				</div>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="main style1">
+				<div class="container">
+					<div class="row 150%">
+						<div class="6u 12u$(medium)">
+							<header class="major">
+								<h2>ADD TASK</h2>
+							</header>
+							<div class="todo-wrapper" ng-controller="TodoCtrl">
+      <h2>You've got <span class="emphasis">{{getTotalTodos()}}</span> things to do</h2>
+      <ul>
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done"/>
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+      </ul>
+      <form>
+        <input class="add-input" placeholder="I need to..." type="text" ng-model="formTodoText" ng-model-instant />
+        <button class="add-btn" ng-click="addTodo()"><h2>Add</h2></button>
+      </form>
+      
+      <button class="clear-btn" ng-click="clearCompleted()">Clear completed</button>
+    </div>
+						</div>
+						<div class="6u$ 12u$(medium) important(medium)">
+							<iframe type="text/html" 
+							width="500" 
+							height="250" 
+							src="http://www.youtube.com/embed/VUk6LXRZMMk"
+							frameborder="0">
+							</iframe>
+							<!--<span class="image fit"><img src="images/pic01.jpg" alt="" /></span>-->
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section id="footer">
+			K.J.S. Fernando                     12000434                             2012CS043
+			</section>
+
+<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+</body>
+</html>
