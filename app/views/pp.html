@@ -16,13 +16,8 @@
   box-sizing: border-box;
 }
 
-/* app */
 
-/*html { font-size: 100%; }
-
-body {
-  font-family: 'Open Sans', sans-serif;
-}*/
+/* super basic grid structure */
 
 .taskContainer {
   width: 600px;
@@ -47,11 +42,11 @@ body {
   float: left;
 }
 
-.taskContent { background: #fff; }
+.content { background: #fff; }
 
 /* logo */
 
-taskH1 {
+h12 {
   font-family: 'Rokkitt', sans-serif;
   color: #666;
   text-align: center;
@@ -71,19 +66,19 @@ taskH1 {
 
 /* inputs */
 
-.taskInputContainer {
+.inputtaskContainer {
   height: 60px;
   border-top: 1px solid #e5e5e5;
   position: relative;
   overflow: hidden;
 }
 
-.taskInputContainer.last {
+.inputtaskContainer.last {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 20px;
 }
 
-.taskInputContainer.taskHalf.last.right { border-left: 1px solid #efefef; }
+.inputtaskContainer.taskHalf.last.right { border-left: 1px solid #efefef; }
 
 input[type="date"],
 input[type="text"],
@@ -146,32 +141,7 @@ input:-moz-placeholder {
  font-weight: bold;
 }
 
-taskLabel {
-  padding: 5px 20px;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #777;
-  display: block;
-  position: absolute;
-}
 
-taskButton {
-  font-family: 'Open Sans', sans-serif;
-  background: transparent;
-  border-radius: 2px;
-  border: none;
-  outline: none;
-  height: 50px;
-  width: 150px;
-  font-size: 1em;
-  color: #fff;
-  cursor: pointer;
-  text-transform: uppercase;
-  position: relative;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
 
 .taskIcon {
   position: absolute;
@@ -261,7 +231,6 @@ taskButton {
 .category-Other { background: #d35400; }
 
 
-/* custom checkboxes */
 
 .taskCheckbox {
   -webkit-appearance: none;
@@ -331,27 +300,27 @@ taskButton {
 </div>
 <div ng-app="TaskManager" style="margin-top:150px;">
   <div class="taskContainer">
-    <div class="taskContent" ng-controller="taskController">
-      <taskH1>Nice To-Do List</taskH1>
+    <div class="content" ng-controller="taskController">
+      <h12>Nice To-Do List</h12>
       <p class="taskTagline">an angularJS todo app</p>
       <form>
-        <div class="taskInputContainer">
+        <div class="inputtaskContainer">
           <input type="text" id="description" class="taskName" placeholder="What do you need to do?" ng-model="newTask">
-          <taskLabel for="description">Description</taskLabel>
+          <label for="description">Description</label>
         </div>
-        <div class="taskInputContainer taskHalf last"> <i class="fa fa-caret-down selectArrow"></i>
+        <div class="inputtaskContainer taskHalf last"> <i class="fa fa-caret-down selectArrow"></i>
           <select id="category" class="taskCategory" ng-model="newTaskCategory" ng-options="obj.name for obj in categories">
             <option class="disabled" value="">Choose a category</option>
           </select>
-          <taskLabel for="category">Category</taskLabel>
+          <label for="category">Category</label>
         </div>
-        <div class="taskInputContainer taskHalf last right">
+        <div class="inputtaskContainer taskHalf last right">
           <input type="date" id="dueDate" class="taskDate" ng-model="newTaskDate">
-          <taskLabel for="dueDate">Due Date</taskLabel>
+          <label for="dueDate">Due Date</label>
         </div>
         <div class="taskRow">
-          <taskButton class="taskAdd" ng-click="addNew()"><i class="fa fa-plus taskIcon"></i>Add task</taskButton>
-          <taskButton class="taskDelete" ng-click="deleteTask()"><i class="fa fa-trash-o taskIcon"></i>Delete Tasks</taskButton>
+          <button class="taskAdd" ng-click="addNew()"><i class="fa fa-plus taskIcon"></i>Add task</button>
+          <button class="taskDelete" ng-click="deleteTask()"><i class="fa fa-trash-o taskIcon"></i>Delete Tasks</button>
         </div>
       </form>
       <ul  class="taskList">
@@ -361,7 +330,7 @@ taskButton {
       </ul>
       <!-- taskList --> 
     </div>
-    <!-- taskContent --> 
+    <!-- content --> 
   </div>
   <!-- taskContainer --> 
 </div>
