@@ -5,12 +5,9 @@
 		<title>ToDo App</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/style.css" />
 		<link href="http://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 	</head>
 
@@ -64,7 +61,7 @@
 								<ul class="toDoList">
 								<li class="toDoItem" ng-repeat="toDoItem in toDoItem" ng-model="toDoItem">
 								<input type="checkbox" class="taskCheckbox" ng-model="toDoItem.complete" ng-change="save()">
-								<span class="complete-{{toDoItem.complete}}">{{toDoItem.desc}}</span> <span class="cat-{{toDoItem.cat}}">{{toDoItem.cat}}</span> <strong class="taskDate complete-{{toDoItem.complete}}"><i class="fa fa-calendar"></i>{{toDoItem.date | date : 'mediumDate'}}</strong> </li>
+								<span style= "color: #000000;" class="complete-{{toDoItem.complete}}">{{toDoItem.desc}}</span> <span class="cat-{{toDoItem.cat}}">{{toDoItem.cat}}</span> <strong class="taskDate complete-{{toDoItem.complete}}"><i class="fa fa-calendar"></i>{{toDoItem.date | date : 'mediumDate'}}</strong> </li>
 								</ul></td></tr>
 								</table>
 								
@@ -177,7 +174,6 @@ app.controller('taskCont', function($scope) {
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 </body>
 </html>
