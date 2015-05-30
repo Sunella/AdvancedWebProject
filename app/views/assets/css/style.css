@@ -17,13 +17,13 @@
     background: #c0392b;
 }
 
-.taskList {
+.toDoList {
 	color: #000000;
     list-style: none;
     padding: 0 20px;
 }
 
-.taskItem {
+.toDoItem {
     border-top: 1px solid #e5e5e5;
     padding: 15px 0;
     color: #777;
@@ -59,45 +59,7 @@
     font-size: 16px;
 }
 
-[class*='category-'] {
-    display: inline-block;
-    font-size: 10px;
-    background: #444;
-    vertical-align: middle;
-    color: #fff;
-    padding: 10px;
-    width: 75px;
-    text-align: center;
-    border-radius: 2px;
-    float: right;
-    font-weight: normal;
-    text-transform: uppercase;
-    margin-right: 20px;
-}
 
-.category- {
-    background: transparent;
-}
-
-.category-Personal {
-    background: #2980b9;
-}
-
-.category-Work {
-    background: #8e44ad;
-}
-
-.category-School {
-    background: #f39c12;
-}
-
-.category-Cleaning {
-    background: #16a085;
-}
-
-.category-Other {
-    background: #d35400;
-}
 
 .taskCheckbox {
     -webkit-appearance: none;
@@ -132,14 +94,6 @@
     content: '\f14a';
     color: #16a085;
 }
-.taskCategory {
-    -webkit-appearance: none;
-            appearance: none;
-    cursor: pointer;
-    padding-left: 16.5px; 
-    background: #fff;
-}
-
 .selectArrow {
     position: absolute;
     z-index: 10;
@@ -148,11 +102,4 @@
     margin-right: 20px;
     color: #777;
     pointer-events: none;
-}
-
-.taskCategory option {
-    background: #fff;
-    border: none;
-    outline: none;
-    padding: 0 100px;
 }

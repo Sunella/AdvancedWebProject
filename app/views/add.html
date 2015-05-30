@@ -12,8 +12,8 @@
 	</head>
 
 <body>
-<!--<div class="ring"><TODO APP</div>-->
-<script>localStorage.clear();</script>
+<!--<div class="ring"><TODO APP</div>
+<script>localStorage.clear();</script>-->
 			<section id="header">
 				<div class="inner">
 					<span class="icon major fa-calendar "></span>
@@ -41,12 +41,6 @@
 								<td><label>Description : </label></td>
 								<td><input type="text" id="desc" class="taskName" placeholder="What do you have to do?" ng-model="newToDo"></td>
 								</tr>
-								<!--<tr>
-								<td><label>Category : </label></td>
-								<td><select id="cat" class="taskCategory" ng-model="newToDoCategory" ng-options="obj.name for obj in categories">
-								<option class="disabled" value="">Choose a category</option>
-								</select></td>
-								</tr>-->
 								<tr>
 								<td><label>Due date : </label></td>
 								<td><input type="date" id="dueDate" ng-model="newToDoDate"</td>
@@ -56,14 +50,13 @@
 								<td><button class="taskDelete" ng-click="deleteToDo()"><i class="fa fa-trash-o icon"></i>Delete Task</button><td>
 								</tr>
 								</form>
-								<tr>
-								<td>
-								<ul class="toDoList">
-								<li class="toDoItem" ng-repeat="toDoItem in toDoItem" ng-model="toDoItem">
+								</table>
+								<ul class="toDoList" style="text-align: left;">
+								<li class="toDoItem" style="text-align: left;" ng-repeat="toDoItem in toDoItem" ng-model="toDoItem">
 								<input type="checkbox" class="taskCheckbox" ng-model="toDoItem.complete" ng-change="save()">
 								<span style= "color: #000000;" class="complete-{{toDoItem.complete}}">{{toDoItem.desc}}</span> <span class="cat-{{toDoItem.cat}}">{{toDoItem.cat}}</span> <strong class="taskDate complete-{{toDoItem.complete}}"><i class="fa fa-calendar"></i>{{toDoItem.date | date : 'mediumDate'}}</strong> </li>
-								</ul></td></tr>
-								</table>
+								</ul>
+								
 								
 								</div>
 							</div>
@@ -124,33 +117,23 @@ app.controller('taskCont', function($scope) {
     
     $scope.newToDo = null;
     $scope.newToDoDate = null;
-    $scope.categories = [
-        {name: 'Personal'},
-        {name: 'Work'},
-        {name: 'School'},
-        {name: 'Cleaning'},
-        {name: 'Other'}
-    ];
-    $scope.newToDoCategory = $scope.categories;
+    
     $scope.addToDo = function () {
         if ($scope.newToDoDate == null || $scope.newToDoDate == '') {
             $scope.toDoItem.push({
                 desc: $scope.newToDo,
                 date: "No deadline",
-                complete: false,
-                cat: $scope.newToDoCategory.name
+                complete: false
             }) 
         } else {
             $scope.toDoItem.push({
                 desc: $scope.newToDo,
                 date: $scope.newToDoDate,
-                complete: false,
-                cat: $scope.newToDoCategory.name
+                complete: false
             })
         };
         $scope.newToDo = '';
         $scope.newToDoDate = '';
-        $scope.newToDoCategory = $scope.categories;
         localStorage.setItem('toDoItems', JSON.stringify($scope.toDoItem));
     };
     $scope.deleteToDo = function () {
